@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Calculation</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Custom CSS */
+        .container {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Insurance Calculation</h5>
+                <form>
+                    <div class="form-group">
+                        <label for="deceasedName">Name of the deceased</label>
+                        <input type="text" class="form-control" id="deceasedName" placeholder="Enter the name of the deceased">
+                    </div>
+                    <div class="form-group">
+                        <label for="ageRange">Age</label>
+                        <select class="form-control" id="ageRange">
+                            <option value="15-20">15-20</option>
+                            <option value="21-25">21-25</option>
+                            <option value="26-30">26-30</option>
+                            <option value="31-35">31-35</option>
+                            <option value="36-40">36-40</option>
+                            <option value="41-45">41-45</option>
+                            <option value="46-50">46-50</option>
+                            <option value="51-55">51-55</option>
+                            <option value="55-60">55-60</option>
+                            <option value="61-65">61-65</option>
+                            <option value="66-70">66-70</option>
+                            <option value="above70">Above 70</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="salary">Salary Per Month</label>
+                        <input type="text" class="form-control" id="salary" placeholder="Enter the salary of the deceased">
+                    </div>
+                    <div class="form-group">
+                        <label for="maritalStatus">Marital Status:</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="maritalStatus" id="married" value="married">
+                            <label class="form-check-label" for="married">Married</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="maritalStatus" id="unmarried" value="unmarried">
+                            <label class="form-check-label" for="unmarried">Unmarried</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="dependents">Number of Dependents</label>
+                        <select class="form-control" id="dependents">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5+">5+</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn btn-primary" id="calculateBtn">Calculate</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Result Table -->
+    <div class="container mt-5" id="resultTable" style="display: none;">
+        <h5>Insurance Calculation Result</h5>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Description</th>
+                    <th scope="col">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>Base Salary</td>
+                    <td id="baseSalary">-</td>
+                </tr>
+                <tr>
+                    <td>Marital Status</td>
+                    <td id="maritalStatus">-</td>
+                </tr>
+                <tr>
+                    <td>Dependents</td>
+                    <td id="dependentsCount">-</td>
+                </tr>
+                <tr>
+                    <td>Salary after Changes</td>
+                    <td id="RevisedSalary">-</td>
+                </tr>
+                <tr>
+                    <td>Future Income Contribution</td>
+                    <td id="futureIncome">-</td>
+                </tr>
+                <tr>
+                    <td>Age Multiplier</td>
+                    <td id="ageMultiplier">-</td>
+                </tr>
+                <tr>
+                    <td>Insurance Amount</td>
+                    <td id="insuranceAmount">-</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
